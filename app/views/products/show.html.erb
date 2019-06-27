@@ -1,16 +1,17 @@
-<a href="#" class="js-next" data-id="<%=@product.id%>">Next...</a>
+<% @product = Product.find(params[:id]) %>
 <div class="productName"><%= @product.name %></div>
-<h1 class="productTitle"><%= @product.inventory %></h1>
-<p class="productBody"><%= @product.description %></p>
+<a href="#" class="js-next" data-id="<%=@product.id%>">Next...</a>
+<h1 class="productInventory"><%= @product.inventory %></h1>
+<p class="productDescription"><%= @product.description %></p>
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-next").on("click", function(e) {
     e.preventDefault();
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.getJSON("/posts/" + nextId + "/post_data", function(data) {
-      $(".authorName").text(data["author"]["name"]);
-      $(".postTitle").text(data["title"]);
-      $(".postBody").text(data["description"]);
+    $.getJSON("/products/" + nextId + "/data", function(data) {
+      $(".productName").text(data["name"]);
+      $(".productInventory").text(data["inventory"]);
+      $(".productDescription").text(data["description"]);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });
