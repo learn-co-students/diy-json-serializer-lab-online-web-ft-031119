@@ -1,4 +1,4 @@
-<% @product = Product.find(params[:id]) %>
+<% #@product = Product.find_by_id(params[:id]) %>
 <div class="productName"><%= @product.name %></div>
 <a href="#" class="js-next" data-id="<%=@product.id%>">Next...</a>
 <h1 class="productInventory"><%= @product.inventory %></h1>
