@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'pry'
 gem 'pry-nav'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'bootsnap'
+gem 'rails-controller-testing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -22,7 +24,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'rails-controller-testing'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda'
   gem 'poltergeist', '~> 1.14.0'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 group :development do
